@@ -11,34 +11,37 @@
 </head>
 
 <body>
-
-    <h1>Product Search</h2><br>
-        <div class="form">
-            <input type="text" id="autoMatchInput" class="input" placeholder="Enter product name...">
-            <button id="autoMatchButton" class="btn btn-primary mt-3">Match</button><br>
-            <p id="autoMatchResult"></p>
-        </div>
-
-        <div class="header">
-            <h2>Manual Mapping
-    </h1>
-    </div>
-    <div class="form">
-        <form id="manualMatchForm" class="form-group">
-            <div class="main">
-                <input type="text" id="inputName" class="input" placeholder="Enter supplier-product name..." required>
-                ->
-                <input type="text" id="mappedName" class="input" placeholder="Enter standardized name..." required>
-                <button type="submit" class="btn btn-primary mt-3">Add to Mapping</button>
+    <div class="main-section">
+        <h1>Product Search</h2><br>
+            <div class="form">
+                <input type="text" id="autoMatchInput" class="input" placeholder="Enter product name...">
+                <button id="autoMatchButton" class="btn btn-primary mt-3">Match</button><br>
+                <p id="autoMatchResult"></p>
             </div>
-        </form>
-    </div>
-    <div class="mapping-section">
-        <button class="showMappingListButton btn btn-primary mt-3" style="height: auto;" onclick="toggleMappings()">Show
-            Mappings</button>
-        <div class="mapping">
-            <h2>Existing Mappings</h2>
-            <ul id="mappingList"></ul>
+
+            <div class="header">
+                <h2>Manual Mapping
+        </h1>
+
+        <div class="form">
+            <form id="manualMatchForm" class="form-group">
+                <div class="main">
+                    <input type="text" id="inputName" class="input" placeholder="Enter supplier-product name..."
+                        required>
+                    ->
+                    <input type="text" id="mappedName" class="input" placeholder="Enter standardized name..." required>
+                    <button type="submit" class="btn btn-primary mt-3">Add to Mapping</button>
+                </div>
+            </form>
+        </div>
+        <div class="mapping-section">
+            <button class="showMappingListButton btn btn-primary mt-3" style="height: auto;"
+                onclick="toggleMappings()">Show
+                Mappings</button>
+            <div class="mapping">
+                <h2>Existing Mappings</h2>
+                <ul id="mappingList"></ul>
+            </div>
         </div>
     </div>
 
