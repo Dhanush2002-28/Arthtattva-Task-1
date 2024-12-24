@@ -10,6 +10,7 @@ body {
     background: -moz-linear-gradient(315deg, rgba(13, 110, 253, 1) 35%, rgba(255, 255, 255, 1) 65%);
     background: -webkit-linear-gradient(315deg, rgba(13, 110, 253, 1) 35%, rgba(255, 255, 255, 1) 65%);
     background: linear-gradient(315deg, rgba(13, 110, 253, 1) 35%, rgba(255, 255, 255, 1) 65%);
+    background-repeat:unset;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d6efd", endColorstr="#ffffff", GradientType=1);
 }
 
@@ -186,4 +187,18 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.disp-map ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.disp-map li {
+    display: flex; /* Enable flexbox for the li */
+    justify-content: space-between; /* Space between items (left and right) */
+    align-items: center; /* Vertically align items */
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Optional: Add a divider between items */
 }

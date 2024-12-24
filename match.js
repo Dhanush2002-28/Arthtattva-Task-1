@@ -112,7 +112,7 @@ async function findIntelligentMatch(inputName) {
             }
         }
 
-        return highestScore >= 0.5 ? bestMatch : null; // Threshold for combined score
+        return highestScore >= 0.25 ? bestMatch : null; // Threshold for combined score
     } else {
         console.error('Failed to load mappings.');
         return null;

@@ -33,17 +33,19 @@
                         required>
                     ->
                     <input type="text" id="mappedName" class="input sm-input" placeholder="Enter standardized name..." required>
-                    <button type="submit" class="btn btn-dark mt-3">Add to Mapping</button>
+                    <button type="submit" style="height: auto;" class="btn btn-dark mt-3">Add to Mapping</button>
                 </div>
             </form>
         </div>
         <div class="mapping-section">
-            <button class="showMappingListButton btn btn-dark mt-3" style="height: auto;"
+            <button class="showMappingListButton btn btn-dark mt-3" style="height: auto; width: auto;"
                 onclick="toggleMappings()">Show
                 Mappings</button>
             <div class="mapping">
                 <h2 style="font-family: 'Raleway';">Existing Mappings</h2>
-                <ul id="mappingList"></ul>
+                <div class="disp-map">
+                    <ul id="mappingList"></ul>
+                </div>
             </div>
         </div>
     </div>
