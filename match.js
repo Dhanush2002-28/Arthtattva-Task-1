@@ -42,7 +42,7 @@ async function findMatch(inputName) {
             }
         }
 
-        return highestScore >= 0.5 ? bestMatch : null; // Threshold for token similarity
+        return highestScore >= 0.25 ? bestMatch : null; // Threshold for token similarity
     } else {
         console.error('Failed to load mappings.');
         return null;

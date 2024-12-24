@@ -44,12 +44,11 @@ function updateMappingList() {
         const listItem = document.createElement('li');
         listItem.textContent = `${inputName} → ${mappedName}`;
 
-        // Create Delete Button
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.style.marginLeft = '20px';
         deleteButton.style.marginTop = '10px'
-        deleteButton.className = 'btn btn-dark mt-2'
+        deleteButton.className = 'btn btn-danger mt-2'
         deleteButton.addEventListener('click', () => deleteMapping(inputName));
 
         listItem.appendChild(deleteButton);

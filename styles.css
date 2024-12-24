@@ -182,7 +182,7 @@ button:hover {
 }
 
 .disp-map ul {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     padding: 0;
     margin: 0;
 }
@@ -193,3 +193,4 @@ button:hover {
     align-items: center; 
     padding: 5px;
     border-bottom: 1px solid #ccc; 
+}
