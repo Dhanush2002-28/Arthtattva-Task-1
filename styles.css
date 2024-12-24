@@ -45,12 +45,10 @@ body {
 
 .mapping {
     display: none;
-    /* Initially hidden */
 }
 
 .mapping.show {
     display: block;
-    /* Visible when the class is added */
 }
 
 .input {
@@ -104,7 +102,7 @@ button {
 
 button,
 .showmap {
-    --color: #560bad;
+    --color: rgb(13, 110, 253);
     font-family: inherit;
     display: inline-block;
     width: 8em;
@@ -166,12 +164,6 @@ ul {
     list-style: none;
 }
 
-/* form,
-#mappingList,
-#autoMatchInput {
-    margin-bottom: 20px;
-} */
-
 input,
 button {
     padding: 8px;
@@ -196,9 +188,8 @@ button:hover {
 }
 
 .disp-map li {
-    display: flex; /* Enable flexbox for the li */
-    justify-content: space-between; /* Space between items (left and right) */
-    align-items: center; /* Vertically align items */
-    padding: 10px;
-    border-bottom: 1px solid #ccc; /* Optional: Add a divider between items */
-}
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 5px;
+    border-bottom: 1px solid #ccc; 

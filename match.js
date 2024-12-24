@@ -126,7 +126,7 @@ document.getElementById('autoMatchButton').addEventListener('click', async () =>
     if (autoMatchInput) {
         const match = await findIntelligentMatch(autoMatchInput);
         if (match) {
-            result.textContent = `Matched Standard Name: ${match}`;
+            result.textContent = `Standard Product Name: ${match}`;
         } else {
             result.textContent = 'No match found.';
         }
