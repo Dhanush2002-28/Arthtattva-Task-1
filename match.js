@@ -49,7 +49,7 @@ async function findMatch(inputName) {
     }
 }
 
-// Calculate the token match score (Jaccard Similarity)
+// Calculate the token match score
 function calculateTokenMatchScore(tokens1, tokens2) {
     const set1 = new Set(tokens1);
     const set2 = new Set(tokens2);
@@ -58,7 +58,7 @@ function calculateTokenMatchScore(tokens1, tokens2) {
     return intersection.length / union.size;
 }
 
-// Fuzzy matching (using Levenshtein distance)
+// Fuzzy matching 
 function calculateLevenshteinDistance(a, b) {
     const matrix = Array.from({ length: a.length + 1 }, () =>
         Array(b.length + 1).fill(0)
