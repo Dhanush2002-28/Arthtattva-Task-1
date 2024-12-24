@@ -6,7 +6,7 @@ function normalizeText(text) {
     return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
 }
 
-// Save mappings to the mongoDB backend
+// Save mappings to the MongoDB backend
 async function saveMappingsToServer() {
     const response = await fetch(API_URL, {
         method: 'POST',
@@ -20,7 +20,7 @@ async function saveMappingsToServer() {
     }
 }
 
-// Load mappings from the mongoDB backend
+// Load mappings from the MongoDB backend
 async function loadMappingsFromServer() {
     const response = await fetch(API_URL);
     if (response.ok) {
@@ -29,7 +29,7 @@ async function loadMappingsFromServer() {
             acc[item.inputName] = item.mappedName;
             return acc;
         }, {});
-        updateMappingList(); 
+        updateMappingList();
     } else {
         console.error('Failed to load mappings.');
     }
@@ -43,8 +43,30 @@ function updateMappingList() {
     for (const [inputName, mappedName] of Object.entries(mappingDictionary)) {
         const listItem = document.createElement('li');
         listItem.textContent = `${inputName} → ${mappedName}`;
+
+        // Create Delete Button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '20px';
+        deleteButton.style.marginTop = '10px'
+        deleteButton.className = 'btn btn-dark mt-2'
+        deleteButton.addEventListener('click', () => deleteMapping(inputName));
+
+        listItem.appendChild(deleteButton);
         listContainer.appendChild(listItem);
     }
+}
+
+// Delete a mapping
+async function deleteMapping(inputName) {
+    // Remove from local dictionary
+    delete mappingDictionary[inputName];
+
+    // Update the server
+    await saveMappingsToServer();
+
+    // Update the UI
+    updateMappingList();
 }
 
 // Handle form submission
@@ -56,8 +78,8 @@ document.getElementById('manualMatchForm').addEventListener('submit', (e) => {
 
     if (inputName && mappedName) {
         mappingDictionary[inputName] = mappedName;
-        updateMappingList(); 
-        saveMappingsToServer(); // Saving to server
+        updateMappingList();
+        saveMappingsToServer(); // Save to server
         document.getElementById('manualMatchForm').reset();
     }
 });

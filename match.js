@@ -13,7 +13,7 @@ const synonymDictionary = {
     "post-it": "sticky"
 };
 
-// Replace synonyms in tokens
+
 function replaceSynonyms(tokens) {
     return tokens.map(token => synonymDictionary[token] || token);
 }
