@@ -30,7 +30,7 @@ async function loadMappingsFromServer() {
             return acc;
         }, {});
         updateMappingList();
-    } else {
+    }else {
         console.error('Failed to load mappings.');
     }
 }
@@ -46,11 +46,11 @@ function updateMappingList() {
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
+        deleteButton.style.fontSize = '0.85rem'
         deleteButton.style.marginLeft = '20px';
         deleteButton.style.marginTop = '10px'
         deleteButton.className = 'btn btn-danger mt-2'
         deleteButton.addEventListener('click', () => deleteMapping(inputName));
-
         listItem.appendChild(deleteButton);
         listContainer.appendChild(listItem);
     }
@@ -58,7 +58,6 @@ function updateMappingList() {
 
 // Delete a mapping
 async function deleteMapping(inputName) {
-    // Remove from local dictionary
     delete mappingDictionary[inputName];
 
     // Update the server
