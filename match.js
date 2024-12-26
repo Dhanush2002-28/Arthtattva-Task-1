@@ -11,6 +11,7 @@ const synonymDictionary = {
     "sheets": "sheet",
     "copy": "paper",
     "post-it": "sticky"
+
 };
 
 
@@ -121,14 +122,44 @@ async function findIntelligentMatch(inputName) {
 
 document.getElementById('autoMatchButton').addEventListener('click', async () => {
     const autoMatchInput = document.getElementById('autoMatchInput').value.trim();
-    const result = document.getElementById('autoMatchResult');
+    const cardContainer = document.querySelector('.card'); 
+    const result = document.getElementById('autoMatchResult'); 
+    const imageContainer = document.getElementById('resultImage'); 
+
+    cardContainer.style.display = 'none';
 
     if (autoMatchInput) {
         const match = await findIntelligentMatch(autoMatchInput);
         if (match) {
-            result.textContent = `Standard Product Name: ${match}`;
+
+            result.textContent = `${match}`;
+            result.style.fontWeight = 'bold';
+            result.style.textAlign = 'center';
+            result.style.fontFamily = 'Raleway';
+
+            if (match === 'A4 Paper 500 sheets') {
+                imageContainer.src = 'assets/paper.png';
+                imageContainer.alt = 'A4 Paper';
+                imageContainer.style.display = 'block';
+            } else if (match === 'Sticky Notes 3x3 Yellow') {
+                imageContainer.src = 'assets/sticky-notes.png'; 
+                imageContainer.alt = 'Sticky Notes';
+                imageContainer.style.display = 'block';
+            } else {
+                imageContainer.src = '';
+                imageContainer.alt = '';
+                imageContainer.style.display = 'none'; 
+            }
+
+            cardContainer.style.display = 'block';
         } else {
             result.textContent = 'No match found.';
+            imageContainer.src = '';
+            imageContainer.alt = '';
+            imageContainer.style.display = 'none'; 
+            cardContainer.style.display = 'block'; 
         }
     }
 });
+
+
